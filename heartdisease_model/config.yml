@@ -1,0 +1,63 @@
+# Package Overview
+package_name: heartdisease_model
+
+# Data Files
+training_data_file: heart_cleveland_upload.csv
+
+# Variables
+# The variable we are attempting to predict (cnt)
+target: condition
+
+saved_model_name: heartdisease_model.checkpoint.model
+
+# Features that will go inside processing pipeline
+features:
+  - age
+  - sex
+  - cp
+  - trestbps
+  - chol
+  - fbs
+  - restecg
+  - thalach
+  - exang
+  - oldpeak
+  - slope
+  - ca
+  - thal
+
+categorical_features_numerical: 
+  - sex
+  - cp
+  - fbs
+  - restecg
+  - exang
+  - ca
+  - thal
+
+numerical_features:
+  - age
+  - trestbps
+  - chol
+  - thalach
+  - oldpeak
+  - slope
+
+  
+# Set train/test split
+train_size: 0.8
+val_size: 0.2
+
+# Set the random seed
+random_state: 42
+
+# Alogrithm parameters
+n_estimators: 100
+max_depth: 10
+
+batch_size: 16
+
+n_epochs: 50
+
+learning_rate: 0.001
+
